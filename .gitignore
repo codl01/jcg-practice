@@ -1,0 +1,7 @@
+scraper/node_modules/
+scraper/.cache/
+
+# local assistant config — never commit
+CLAUDE.md
+CLAUDE.local.md
+.claude/
