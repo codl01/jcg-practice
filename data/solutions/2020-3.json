@@ -1,0 +1,74 @@
+{
+  "01": {
+    "solution": "**리팩토링(Refactoring)**: 외부 동작(기능)은 그대로 두고 내부 구조를 개선하는 작업입니다.\n\n목적: 코드 단순화, 가독성 향상, 유지보수성 향상, 버그를 찾기 쉬워짐, 개발 생산성과 품질 향상\n\n핵심 키워드: **기능 변경 없이 구조 개선**"
+  },
+  "02": {
+    "solution": "c의 초깃값이 **0**이라서 `c *= i`를 몇 번 반복해도 0입니다.\n\n- i = 1 ~ 10 동안 c = 0 × i = 0\n\n출력: **0**"
+  },
+  "03": {
+    "accept": ["OSPF", "Open Shortest Path First"],
+    "solution": "**OSPF(Open Shortest Path First)**: 다익스트라(Dijkstra) 알고리즘을 쓰는 **링크 상태** 내부 라우팅 프로토콜(IGP)입니다. 대규모 네트워크에 적합하고, 영역(Area)으로 나누어 관리하며 홉 수 제한이 없습니다.\n\n비교: **RIP**는 거리 벡터 방식(벨만-포드)이고 최대 15홉까지만 지원합니다."
+  },
+  "04": {
+    "solution": "**형상 통제**: 형상 항목의 변경 요청을 검토하고 승인해서, 기준선(Baseline)에 반영하고 버전을 관리하는 활동입니다. 형상 통제 위원회(CCB)가 담당합니다.\n\n형상 관리 절차: 형상 식별 → **형상 통제** → 형상 감사 → 형상 기록(보고)"
+  },
+  "05": {
+    "accept": ["프로토콜", "Protocol"],
+    "solution": "톰 마릴(Tom Marill)이 '기술적 은어'라는 뜻으로 정의한 용어가 **프로토콜(Protocol)**입니다. 서로 다른 시스템 간 통신을 위한 규약입니다.\n\n기본 요소: 구문(Syntax), 의미(Semantics), 타이밍(Timing)"
+  },
+  "06": {
+    "accept": ["ICMP", "Internet Control Message Protocol"],
+    "solution": "**ICMP(Internet Control Message Protocol)**: IP 패킷 처리 중 생긴 오류나 제어 메시지를 알리는 네트워크 계층 프로토콜입니다.\n\n예: `ping`(Echo Request/Reply), 목적지 도달 불가(Destination Unreachable), TTL 초과"
+  },
+  "07": {
+    "accept": ["1234561, 124567", "1234567, 124561", "1-2-3-4-5-6-1, 1-2-4-5-6-7"],
+    "solution": "**분기(결정) 커버리지**: 모든 결정문(②, ⑥)이 참과 거짓을 각각 한 번 이상 수행해야 합니다.\n\n- 경로 1: ①→②(YES)→③→④→⑤→⑥(YES)→① = **1234561**\n- 경로 2: ①→②(NO)→④→⑤→⑥(NO)→⑦ = **124567**\n\n②와 ⑥의 참·거짓을 서로 바꿔 짝지은 1234567, 124561도 정답입니다."
+  },
+  "08": {
+    "accept": ["SELECT 과목이름, MIN(점수) AS 최소점수, MAX(점수) AS 최대점수 FROM 성적 GROUP BY 과목이름 HAVING AVG(점수) >= 90"],
+    "solution": "```\nSELECT 과목이름, MIN(점수) AS 최소점수, MAX(점수) AS 최대점수\nFROM 성적\nGROUP BY 과목이름\nHAVING AVG(점수) >= 90;\n```\n\n- 그룹을 거르는 조건은 WHERE가 아니라 **HAVING**에 씁니다.\n- 컴퓨터과학 평균 (95 + 85) / 2 = 90 → 포함\n- 운영체제 평균 82.5 → 제외"
+  },
+  "09": {
+    "accept": ["DELETE FROM 학생 WHERE 이름='민수'"],
+    "solution": "```\nDELETE FROM 학생 WHERE 이름 = '민수';\n```\n\n- 튜플 삭제: `DELETE FROM` (DML)\n- 테이블 자체 삭제: `DROP TABLE` (DDL)\n- 문자열은 작은따옴표로 감쌉니다."
+  },
+  "10": {
+    "accept": ["÷", "DIVISION", "디비전"],
+    "solution": "**디비전(Division, ÷)**: A ÷ B는 B의 모든 튜플과 관련된 A의 튜플을 골라, B의 속성을 뺀 나머지를 프로젝션합니다.\n\n순수 관계 연산자: Select(σ), Project(π), Join(⋈), Division(÷)\n\n일반 집합 연산자: 합집합(∪), 교집합(∩), 차집합(−), 카티션 프로덕트(×)"
+  },
+  "11": {
+    "solution": "**헝가리안 표기법**: 식별자 앞에 **자료형을 나타내는 접두어**를 붙이는 표기법입니다. 예: `nCount`(int), `szName`(문자열), `bFlag`(bool)\n\n다른 표기법\n- 카멜: `goodMan`\n- 파스칼: `GoodMan`\n- 스네이크: `good_man`"
+  },
+  "12": {
+    "accept": ["블랙박스 테스트", "블랙박스", "Black Box Test", "명세 기반 테스트"],
+    "solution": "**블랙박스 테스트(명세 기반)**: 내부 구조를 보지 않고 요구사항 명세를 기준으로 입력과 출력을 검사합니다.\n\n기법: 동치 분할, 경계값 분석, 원인-효과 그래프, 오류 예측, 비교 검사, 결정 테이블, 상태 전이\n\n비교: **화이트박스 테스트**(구조 기반)는 기초 경로, 제어 흐름, 조건·루프 검사를 합니다."
+  },
+  "13": {
+    "solution": "함수가 중첩 호출됩니다.\n- `r1()` = 4\n- `r10()` = 30 + 4 = 34\n- `r100()` = 200 + 34 = **234**"
+  },
+  "14": {
+    "solution": "**스키마(Schema)**: 데이터베이스의 **구조와 제약 조건**에 대한 명세입니다. 데이터 사전(시스템 카탈로그)에 저장됩니다.\n\n3단계 스키마\n- 외부 스키마: 사용자 관점 (서브 스키마)\n- 개념 스키마: 조직 전체의 논리적 구조\n- 내부 스키마: 물리적 저장 구조"
+  },
+  "15": {
+    "answer": "Vehicle name: Spark",
+    "accept": ["Vehicle name : Spark", "vehicle name:Spark", "Vehicle name:Spark"],
+    "solution": "`Vehicle obj = new Car(\"Spark\")`를 실행하면 Car 생성자가 `setName(\"Spark\")`를 호출해 name에 Spark가 저장됩니다.\n\n`obj.getName()`은 **인자가 없는** 버전입니다. Car는 `getName(String)`과 `getName(byte[])`만 정의했으므로(오버로딩), 부모 Vehicle의 `getName()`이 실행되어 \"Vehicle name: \" + name을 반환합니다.\n\n출력: **Vehicle name: Spark**\n\n(복원 코드의 `vehicle`, `Static` 등 대소문자 오류는 원본에서 `Vehicle`, `static`입니다.)"
+  },
+  "16": {
+    "solution": "**직관성**: 누구나 쉽게 이해하고 사용할 수 있어야 한다는 원칙입니다. 쉬운 검색, 쉬운 사용, 일관성을 포함합니다.\n\nUI 설계 원칙: 직관성, 유효성, 학습성, 유연성"
+  },
+  "17": {
+    "solution": "`i % 2 == 1`(홀수)이면 `continue`로 건너뛰므로 **짝수만** 더합니다.\n\n2 + 4 + 6 + 8 + 10 = **30**"
+  },
+  "18": {
+    "accept": ["Point-to-Point, Hub & Spoke", "포인트 투 포인트, 허브 앤 스포크", "Point-to-point, Hub and Spoke"],
+    "solution": "EAI 구축 유형\n- **Point-to-Point**: 1:1로 직접 연결. 단순하지만 변경과 재사용이 어렵습니다.\n- **Hub & Spoke**: 가운데 허브를 거쳐 전송하는 중앙 집중형. 허브가 장애 나면 전체가 멈춥니다.\n- Message Bus: 미들웨어(버스)를 두어 처리. 확장성이 좋습니다.\n- Hybrid: 그룹 내부는 Hub & Spoke, 그룹 사이는 Message Bus"
+  },
+  "19": {
+    "solution": "**생성자(Constructor)**: 객체가 생성될 때 **자동으로 호출**되어 멤버를 초기화하는 특수 메서드입니다. 클래스와 이름이 같고 반환형이 없습니다.\n\n반대로 소멸자(`~클래스명`)는 객체가 소멸될 때 호출됩니다."
+  },
+  "20": {
+    "accept": ["ALTER, ADD", "ALTER ADD"],
+    "solution": "```\nALTER TABLE 학생 ADD 주소 VARCHAR(20);\n```\n\n- ALTER TABLE ~ **ADD**: 칼럼 추가\n- **MODIFY / ALTER COLUMN**: 칼럼 변경\n- **DROP COLUMN**: 칼럼 삭제"
+  }
+}

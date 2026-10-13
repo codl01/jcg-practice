@@ -169,8 +169,38 @@ h2 { font-size: 17px; margin: 28px 0 10px; letter-spacing: -.01em; }
 .bar .bad { background: var(--bad); }
 .done-badge { float: right; font-size: 12px; color: var(--ok); font-weight: 700; }
 
-.settings { margin-top: 36px; padding: 14px 16px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; }
+.settings { margin-top: 12px; padding: 14px 16px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; }
+#sync-box { margin-top: 36px; display: block; }
 .settings p { margin: 0; font-size: 13px; color: var(--text-2); }
+#sync-box p { font-size: 14px; color: var(--text); }
+#sync-box p + * { margin-top: 10px; }
+.steps { margin: 10px 0 0; padding-left: 20px; font-size: 13px; color: var(--text-2); }
+.sync-form { display: flex; gap: 8px; }
+.sync-form input {
+  flex: 1; min-width: 0; height: 34px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg);
+  color: var(--text); padding: 0 10px; font: inherit; font-size: 16px;
+}
+.sync-err { color: var(--bad); font-size: 13px; }
+.sync-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--text-3); opacity: .5; }
+.sync-dot[data-state="ok"] { background: var(--ok); opacity: 1; }
+.sync-dot[data-state="syncing"] { background: var(--accent); opacity: 1; animation: pulse 1s infinite alternate; }
+.sync-dot[data-state="error"] { background: var(--bad); opacity: 1; }
+@keyframes pulse { to { opacity: .3; } }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+a.stat { color: var(--text); }
+a.stat:hover { border-color: var(--accent); }
+
+/* ---------- note / result ---------- */
+.qlist li { display: flex; align-items: center; }
+.qlist li > a, .qlist li > label { flex: 1; min-width: 0; }
+.del { flex: none; margin-right: 8px; font-size: 22px; line-height: 1; color: var(--text-3); }
+.del:hover { color: var(--bad); background: var(--bad-soft); }
+.pick { display: flex; gap: 12px; align-items: center; padding: 13px 16px; cursor: pointer; }
+.pick input { width: 20px; height: 20px; flex: none; accent-color: var(--accent); }
+.tag-note { background: var(--bad-soft); color: var(--bad); }
+.note-toggle { width: 100%; margin-top: 8px; }
+.note-toggle[aria-pressed="true"] { color: var(--bad); border-color: var(--bad); }
+.fix { font-size: 13px; color: var(--text-2); background: var(--warn-soft); padding: 6px 10px; border-radius: 8px; margin: 8px 0 0; }
 
 /* ---------- list ---------- */
 .back { display: inline-flex; align-items: center; gap: 4px; color: var(--text-2); font-size: 14px; font-weight: 600; margin-bottom: 12px; }
@@ -264,6 +294,10 @@ textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3
 details.explain { margin-top: 14px; border-top: 1px dashed var(--border); padding-top: 10px; }
 details.explain summary { cursor: pointer; font-size: 14px; font-weight: 700; color: var(--text-2); }
 details.explain .rich { margin-top: 10px; font-size: 15px; color: var(--text-2); }
+details.explain[open] summary { margin-bottom: 4px; }
+details.explain .rich strong { color: var(--text); }
+details.explain .rich code { background: var(--code-bg); padding: 1px 5px; border-radius: 5px; font-size: .92em; }
+details.explain .rich pre code { background: none; padding: 0; }
 .src { display: inline-block; margin-top: 12px; font-size: 13px; color: var(--text-3); }
 
 .qnav { display: flex; gap: 8px; margin-top: 16px; }

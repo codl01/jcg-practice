@@ -11,7 +11,8 @@ const DATA = new URL('data/', ROOT);
 
 const ALLOWED = new Set(['p', 'br', 'b', 'strong', 'i', 'em', 'u', 'sub', 'sup', 'table', 'thead', 'tbody', 'tr', 'td', 'th',
   'ul', 'ol', 'li', 'pre', 'code', 'img', 'h4', 'blockquote', 'hr']);
-const DROP = 'script, style, ins, iframe, noscript, .revenue_unit_wrap, .btn-toggle-moreless, .another_category, figcaption:empty';
+// moreLess wrappers are dropped from question HTML; answers are rendered from their .moreless-content directly.
+const DROP = 'script, style, ins, iframe, noscript, .revenue_unit_wrap, .btn-toggle-moreless, .another_category, figcaption:empty, [data-ke-type="moreLess"]';
 const BLOCKS = new Set(['p', 'table', 'ul', 'ol', 'pre', 'h4', 'blockquote', 'hr', 'figure', 'div']);
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -126,7 +127,7 @@ function categorize(text, codes) {
   const code = codes.join('\n');
   const head = text.slice(0, 200);
   // The question prompt usually names the language ("다음은 Java 코드에 대한 문제이다"), so trust it first.
-  if (/Java|자바/i.test(head)) return 'Java';
+  if (/Java(?!\s*Script)|자바(?!\s*스크립트)/i.test(head)) return 'Java';
   if (/Python|파이썬/i.test(head)) return 'Python';
   if (/C\s?언어|C\s?코드|C\s?프로그램/.test(head)) return 'C';
   if (/#include|printf\s*\(|scanf\s*\(|malloc\(/.test(code)) return 'C';
@@ -170,7 +171,9 @@ async function scrapeExam(exam) {
 
   answerIdx.forEach((ai, qi) => {
     const no = qi + 1;
-    let seg = top.slice(from, ai);
+    // Some posts nest the 더보기 block inside the code widget; then that element is still question content.
+    const holder = top[ai];
+    let seg = top.slice(from, $(holder).is('[data-ke-type="moreLess"]') ? ai : ai + 1);
     const startRe = new RegExp(`^\\s*${no}\\s*[.)번]`);
     const s = seg.findIndex((el) => startRe.test(clean($(el).text())));
     if (s >= 0) seg = seg.slice(s);
@@ -205,6 +208,42 @@ async function scrapeExam(exam) {
   return { exam: { id: exam.id, year: exam.year, round: exam.round, source: exam.source, questions }, warnings, images: imgMap.size };
 }
 
+// Minimal markdown for hand-written solutions: ```code```, **bold**, `code`, "- " lists, blank line = paragraph.
+function md(src) {
+  const blocks = [];
+  const text = src.replace(/\r/g, '').replace(/```\w*\n([\s\S]*?)```/g, (_, code) => `\u0000${blocks.push(code.replace(/\n$/, '')) - 1}\u0000`);
+  const inline = (s) => esc(s).replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  return text.split(/\n{2,}/).map((para) => {
+    // eslint-disable-next-line no-control-regex -- \u0000 is the code-block placeholder delimiter
+    const m = para.trim().match(/^\u0000(\d+)\u0000$/);
+    if (m) return `<pre><code>${esc(blocks[+m[1]])}</code></pre>`;
+    const lines = para.trim().split('\n');
+    if (lines.every((l) => /^\s*- /.test(l))) return `<ul>${lines.map((l) => `<li>${inline(l.replace(/^\s*- /, ''))}</li>`).join('')}</ul>`;
+    return `<p>${lines.map(inline).join('<br>')}</p>`;
+  }).filter((p) => p !== '<p></p>').join('\n');
+}
+
+// data/solutions/<examId>.json: { "07": { solution, answer?, accept?, category? } } — written by hand, verified answers.
+async function applySolutions(exam) {
+  let sol = {};
+  try { sol = JSON.parse(await readFile(new URL(`solutions/${exam.id}.json`, DATA), 'utf8')); } catch { return 0; }
+  let n = 0;
+  for (const q of exam.questions) {
+    const s = sol[String(q.no).padStart(2, '0')];
+    if (!s) continue;
+    n++;
+    if (s.solution) q.solutionHtml = md(s.solution);
+    if (s.answer) {
+      q.answerFix = q.answerText.replace(/\n/g, ' / ');
+      q.answerText = s.answer;
+      q.answerHtml = `<p>${s.answer.split('\n').map(esc).join('<br>')}</p>`;
+    }
+    if (s.accept) q.accept = s.accept;
+    if (s.category) q.category = s.category;
+  }
+  return n;
+}
+
 // data/choices/<examId>.json: { "07": [correct, wrong, wrong, wrong] } — 4지선다 practice options, correct one first.
 async function applyChoices(exam) {
   let ch = {};
@@ -223,6 +262,8 @@ try { overrides = JSON.parse(await readFile(new URL('overrides.json', DATA), 'ut
 const out = [];
 for (const e of EXAMS) {
   const { exam, warnings, images } = await scrapeExam(e);
+  const solved = await applySolutions(exam);
+  if (solved < exam.questions.length) warnings.push(`solutions: ${solved}/${exam.questions.length}`);
   for (const q of exam.questions) if (overrides[q.id]) Object.assign(q, overrides[q.id]);
   const theory = exam.questions.filter((q) => q.category === '이론').length;
   const mc = await applyChoices(exam);

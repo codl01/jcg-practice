@@ -5,3 +5,4 @@ scraper/.cache/
 CLAUDE.md
 CLAUDE.local.md
 .claude/
+scraper/.verify/

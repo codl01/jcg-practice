@@ -1,0 +1,81 @@
+{
+  "01": {
+    "accept": ["RTO", "Recovery Time Objective", "재해 복구 시간", "목표 복구 시간"],
+    "solution": "**RTO(Recovery Time Objective, 목표 복구 시간)**는 업무가 중단된 시점부터 복구되어 다시 정상 가동될 때까지의 **시간**입니다.\n\n비교\n- **RPO(Recovery Point Objective)**: 데이터를 어느 **시점**까지 복구할지, 즉 허용 가능한 데이터 손실 시점\n- RCO: 네트워크 복구 수준\n- RSO: 복구 대상 범위"
+  },
+  "02": {
+    "accept": ["{'중국', '한국', '베트남', '홍콩', '태국'}"],
+    "solution": "set은 **중복을 허용하지 않고 순서가 없습니다.**\n\n- 초기: {일본, 중국, 한국}\n- `add('베트남')`: 추가\n- `add('중국')`: 이미 있으므로 변화 없음\n- `remove('일본')`: 삭제\n- `update([...])`: 홍콩, 태국 추가 (한국은 중복)\n\n결과 원소는 **중국, 한국, 베트남, 홍콩, 태국** 5개입니다. 실제 출력 순서는 실행마다 달라질 수 있으며, 시험에서는 원소만 맞으면 됩니다."
+  },
+  "03": {
+    "accept": ["AJAX", "Ajax", "Asynchronous JavaScript and XML"],
+    "solution": "**AJAX(Asynchronous JavaScript and XML)**: `XMLHttpRequest`로 서버와 **비동기 통신**해서 페이지 전체를 새로 고치지 않고 일부만 갱신하는 기법입니다. 요즘은 `fetch` API도 많이 씁니다."
+  },
+  "04": {
+    "accept": ["애자일", "Agile", "애자일 방법론"],
+    "solution": "**애자일(Agile)**: 절차보다 사람과 협업을 중시하고, 짧은 반복 주기로 변화에 유연하게 대응하는 경량 개발 방법론입니다. 순차적인 폭포수(Waterfall) 모델과 대비됩니다.\n\n대표 기법: 스크럼(Scrum), XP(eXtreme Programming), 칸반, FDD"
+  },
+  "05": {
+    "solution": "객체를 생성하는 키워드는 **new**입니다. `Parent pa = new Child();`는 부모 타입 변수에 자식 객체를 대입하는 업캐스팅입니다.\n\n참고: `pa.show()`를 호출하면 오버라이딩된 자식 메서드가 실행되어 \"Child\"가 출력됩니다(동적 바인딩).\n\n(코드의 `class parent`, `system` 등은 복원 과정의 오타입니다.)"
+  },
+  "06": {
+    "accept": ["SELECT 학번, 이름 FROM 학생 WHERE 학년 IN (3, 4);", "SELECT 학번,이름 FROM 학생 WHERE 학년 IN(3,4)"],
+    "solution": "```\nSELECT 학번, 이름\nFROM 학생\nWHERE 학년 IN (3, 4);\n```\n\n`IN (값1, 값2)`은 `학년 = 3 OR 학년 = 4`와 같습니다."
+  },
+  "07": {
+    "solution": "**ROLLBACK**: 트랜잭션 처리 중 오류가 나면, 그때까지의 변경을 취소하고 트랜잭션 시작 전 상태나 **SAVEPOINT**로 되돌리는 TCL 명령어입니다. 원자성(Atomicity)을 보장하는 수단입니다.\n\nTCL: COMMIT(확정), ROLLBACK(취소), SAVEPOINT(중간 저장점)"
+  },
+  "08": {
+    "accept": ["IPSec", "IPsec", "Internet Protocol Security"],
+    "solution": "**IPSec(IP Security)**: 네트워크 계층(3계층)에서 IP 패킷을 보호하는 보안 프로토콜입니다.\n\n- **AH(Authentication Header)**: 무결성과 인증 (암호화 없음)\n- **ESP(Encapsulating Security Payload)**: 기밀성(암호화)과 무결성\n- 모드: 전송 모드, 터널 모드 (VPN에 사용)"
+  },
+  "09": {
+    "accept": ["정적 분석 도구", "정적 분석", "Static Analysis"],
+    "solution": "**정적 분석 도구**: 프로그램을 **실행하지 않고** 소스 코드를 분석해 코딩 표준 위반, 복잡도, 잠재 결함을 찾습니다. 예: PMD, Checkstyle, SonarQube, cppcheck\n\n반대로 **동적 분석**은 프로그램을 실행하면서 메모리 누수 등을 찾습니다. 예: Valgrind, Avalanche"
+  },
+  "10": {
+    "accept": ["Observer", "옵저버", "Observer Pattern"],
+    "solution": "한 객체의 상태가 바뀌면 의존하는 객체들에게 자동으로 알리는 **일대다(1:N)** 의존 관계가 **Observer Pattern**입니다. 행위(Behavioral) 패턴에 속합니다.\n\n예: 이벤트 리스너, 발행·구독(Publish/Subscribe) 구조"
+  },
+  "11": {
+    "category": "이론",
+    "accept": ["Android", "안드로이드"],
+    "solution": "리눅스 커널 기반의 모바일 운영체제이자 소프트웨어 스택으로, 자바와 코틀린으로 앱을 개발하고 런타임(ART)에서 바이트코드를 실행합니다. 정답은 **안드로이드(Android)**입니다."
+  },
+  "12": {
+    "accept": ["CREATE INDEX IDX_NAME ON 학생 (NAME);"],
+    "solution": "```\nCREATE INDEX IDX_NAME ON 학생(NAME);\n```\n\n형식: `CREATE [UNIQUE] INDEX 인덱스명 ON 테이블명(칼럼명);`\n\n삭제: `DROP INDEX 인덱스명;`"
+  },
+  "13": {
+    "accept": ["SOAP", "Simple Object Access Protocol"],
+    "solution": "**SOAP(Simple Object Access Protocol)**: HTTP, HTTPS, SMTP 위에서 **XML 기반** 메시지로 웹 서비스를 주고받는 프로토콜입니다. 무겁기 때문에 요즘은 REST(RESTful)로 많이 대체합니다.\n\n웹 서비스 3요소: SOAP, WSDL(서비스 명세), UDDI(서비스 등록·검색)"
+  },
+  "14": {
+    "category": "이론",
+    "solution": "**SQL Injection**: 입력값에 악의적인 SQL 구문을 끼워 넣어 DB를 비정상적으로 조회하거나 조작하는 공격입니다.\n\n예: 로그인 ID에 `' OR '1'='1` 을 입력하면 인증 조건이 항상 참이 됩니다.\n\n대응: Prepared Statement(바인딩 변수), 입력값 검증과 필터링, 최소 권한 DB 계정"
+  },
+  "15": {
+    "accept": ["chmod 751 a.txt"],
+    "solution": "권한은 r = 4, w = 2, x = 1의 합으로 표현합니다.\n- 사용자(owner): rwx = 4 + 2 + 1 = **7**\n- 그룹(group): r-x = 4 + 1 = **5**\n- 기타(other): --x = **1**\n\n```\nchmod 751 a.txt\n```"
+  },
+  "16": {
+    "accept": ["유효성"],
+    "solution": "UI 설계 원칙\n- 직관성: 쉽게 이해하고 사용\n- **유효성**: 사용자의 목적을 정확하고 완벽하게 달성\n- 학습성: 쉽게 배우고 익힘\n- 유연성: 사용자 요구를 최대한 수용하고 오류는 최소화"
+  },
+  "17": {
+    "accept": ["LOD", "Linked Open Data"],
+    "solution": "**LOD(Linked Open Data)**: 누구나 쓸 수 있게 공개된 데이터(Open Data)를 웹 상에서 서로 연결(Linked Data)해 하나로 묶는 방식입니다. URI로 데이터를 식별하고 RDF로 기술합니다."
+  },
+  "18": {
+    "accept": ["개념적, 논리적, 물리적", "2, 3, 1", "개념적 데이터 모델링, 논리적 데이터 모델링, 물리적 데이터 모델링"],
+    "solution": "데이터베이스 설계 순서: 요구사항 분석 → **개념적** 설계 → **논리적** 설계 → **물리적** 설계 → 구현\n\n- 개념적: E-R 다이어그램 작성 (DBMS 독립)\n- 논리적: 특정 데이터 모델(관계형)로 변환, 정규화\n- 물리적: 저장 구조, 인덱스, 접근 경로 설계"
+  },
+  "19": {
+    "answer": "a=10",
+    "solution": "`new B(10)`을 실행하면 B 생성자 안에서 `super(10)`으로 A의 a에 10이 저장되고, 이어서 `super.display()`가 호출됩니다.\n\n`\"a=\" + a`는 공백 없이 연결되므로 출력은 **a=10**입니다. 원문의 \"a = 10\"은 띄어쓰기가 잘못된 것입니다."
+  },
+  "20": {
+    "accept": ["형상 관리", "형상관리", "SCM", "Software Configuration Management"],
+    "solution": "**형상 관리(SCM, Software Configuration Management)**: 개발 과정의 산출물 변경 사항을 식별하고 통제·추적하는 활동입니다.\n\n절차: 형상 식별 → 형상 통제 → 형상 감사 → 형상 기록\n\n도구: CVS, SVN, Git"
+  }
+}
