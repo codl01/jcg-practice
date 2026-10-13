@@ -3,7 +3,7 @@
 
   // ---------- storage (every access guarded: private mode / blocked storage must not break the app) ----------
   const PROGRESS_KEY = 'jcg.progress.v1'; // { [questionId]: { s: 'correct' | 'wrong', a: myAnswer, t: epochMs } }
-  const PREFS_KEY = 'jcg.prefs.v1';       // { theme?: 'light'|'dark', cat?: string, last?: { id, query } }
+  const PREFS_KEY = 'jcg.prefs.v1';       // { theme?: 'light'|'dark', cat?: string, mode?: 'mc'|'text', last?: { id, query } }
 
   const store = {
     read(key, fallback) {
@@ -56,6 +56,13 @@
     d.innerHTML = html;
     d.querySelectorAll('pre').forEach((p) => p.replaceWith(' [코드] '));
     return d.textContent.replace(/\s+/g, ' ').trim();
+  };
+  const shuffle = (arr) => {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
   };
 
   function queryString(params) {
@@ -261,6 +268,20 @@
     const next = seq.find((x) => x.idx > q.idx);
     const qs = queryString(params);
     const rec = progress[q.id];
+    // 객관식: choices[0] is the correct one; shown in a fresh random order on every visit.
+    const hasMc = Array.isArray(q.choices) && q.choices.length > 1;
+    let mode = hasMc && prefs.mode !== 'text' ? 'mc' : 'text';
+    const order = hasMc ? shuffle(q.choices.map((_, i) => i)) : [];
+    let picked = hasMc && rec ? q.choices.indexOf(rec.a) : -1;
+    let mcGraded = false;
+    const HINTS = {
+      text: '띄어쓰기·대소문자는 무시하고 자동 채점하며, 판정이 어려우면 직접 O/X를 고르면 됩니다.',
+      mc: '보기를 고르고 정답 확인을 누르면 자동 채점합니다. 숫자 키 1~4로도 고를 수 있어요.',
+    };
+    const KBD = {
+      text: 'Ctrl+Enter 정답 확인 · ← → 이전/다음 문제',
+      mc: '1~4 보기 선택 · Enter 정답 확인 · ← → 이전/다음 문제',
+    };
 
     prefs.last = { id: q.id, query: qs };
     savePrefs();
@@ -279,12 +300,24 @@
       <article class="card qbody rich">${q.html}</article>
 
       <div class="card answer-box">
-        <label for="my-answer">내 답</label>
-        <textarea id="my-answer" placeholder="답을 입력하세요" autocomplete="off" autocapitalize="off" spellcheck="false">${esc(drafts[q.id] ?? (rec ? rec.a : ''))}</textarea>
+        <div class="answer-head">
+          <label for="my-answer" id="answer-label">내 답</label>
+          ${hasMc ? `<div class="seg" role="group" aria-label="풀이 방식">
+            <button type="button" data-mode="text" aria-pressed="${mode === 'text'}">주관식</button>
+            <button type="button" data-mode="mc" aria-pressed="${mode === 'mc'}">객관식</button>
+          </div>` : ''}
+        </div>
+        <div id="text-pane" ${mode === 'mc' ? 'hidden' : ''}>
+          <textarea id="my-answer" placeholder="답을 입력하세요" autocomplete="off" autocapitalize="off" spellcheck="false">${esc(drafts[q.id] ?? (rec ? rec.a : ''))}</textarea>
+        </div>
+        ${hasMc ? `<div id="mc-pane" class="choices" role="radiogroup" aria-labelledby="answer-label" ${mode === 'text' ? 'hidden' : ''}>
+          ${order.map((i, k) => `<button type="button" class="choice" role="radio" data-i="${i}" aria-checked="${i === picked}">
+            <span class="num">${'①②③④⑤⑥'[k]}</span><span>${esc(q.choices[i])}</span></button>`).join('')}
+        </div>` : ''}
         <div class="grade" style="margin-top:10px">
           <button type="button" class="btn btn-primary" id="check">정답 확인</button>
         </div>
-        <p class="hint">띄어쓰기·대소문자는 무시하고 자동 채점하며, 판정이 어려우면 직접 O/X를 고르면 됩니다.</p>
+        <p class="hint" id="hint">${HINTS[mode]}</p>
       </div>
 
       <section class="card reveal" id="reveal" hidden>
@@ -305,7 +338,7 @@
         <a class="btn" href="#/list${qs}" aria-label="목록">목록</a>
         <a class="btn" ${next ? `href="#/q/${next.id}${qs}"` : 'aria-disabled="true" style="opacity:.4;pointer-events:none"'}>다음 →</a>
       </nav>
-      <p class="kbd-hint">Ctrl+Enter 정답 확인 · ← → 이전/다음 문제</p>`;
+      <p class="kbd-hint" id="kbd-hint">${KBD[mode]}</p>`;
 
     const ta = document.getElementById('my-answer');
     const reveal = document.getElementById('reveal');
@@ -314,14 +347,64 @@
 
     ta.addEventListener('input', () => { drafts[q.id] = ta.value; });
 
-    function setGrade(s) {
-      progress[q.id] = { s, a: ta.value, t: Date.now() };
+    const hint = document.getElementById('hint');
+    const mcPane = document.getElementById('mc-pane');
+    const choiceBtns = mcPane ? [...mcPane.querySelectorAll('.choice')] : [];
+
+    function setMode(m) {
+      mode = m;
+      prefs.mode = m;
+      savePrefs();
+      document.getElementById('text-pane').hidden = m !== 'text';
+      mcPane.hidden = m !== 'mc';
+      $app.querySelectorAll('[data-mode]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.mode === m)));
+      hint.textContent = HINTS[m];
+      hint.classList.remove('warn');
+      document.getElementById('kbd-hint').textContent = KBD[m];
+    }
+    $app.querySelectorAll('[data-mode]').forEach((b) => b.addEventListener('click', () => setMode(b.dataset.mode)));
+
+    function pick(i) {
+      if (mcGraded) return;
+      picked = i;
+      choiceBtns.forEach((b) => b.setAttribute('aria-checked', String(+b.dataset.i === i)));
+      hint.textContent = HINTS.mc;
+      hint.classList.remove('warn');
+    }
+    choiceBtns.forEach((b) => b.addEventListener('click', () => pick(+b.dataset.i)));
+
+    function setGrade(s, answer = mode === 'mc' && picked >= 0 ? q.choices[picked] : ta.value) {
+      progress[q.id] = { s, a: answer, t: Date.now() };
       saveProgress();
       gradeBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.grade === s)));
       document.getElementById('status').innerHTML = statusBadge(progress[q.id]);
     }
 
+    function checkMc() {
+      if (picked < 0) {
+        hint.textContent = '보기를 먼저 골라 주세요.';
+        hint.classList.add('warn');
+        return;
+      }
+      const ok = picked === 0;
+      mcGraded = true;
+      mcPane.classList.add('graded');
+      choiceBtns.forEach((b) => {
+        const i = +b.dataset.i;
+        b.classList.toggle('is-correct', i === 0);
+        b.classList.toggle('is-wrong', i === picked && !ok);
+      });
+      document.getElementById('my-echo').textContent = `내 답: ${q.choices[picked]}`;
+      verdict.innerHTML = ok
+        ? '<div class="verdict correct">정답입니다! 자동으로 채점했어요.</div>'
+        : '<div class="verdict wrong">틀렸습니다. 초록색 보기가 정답이에요. 오답노트에 추가됩니다.</div>';
+      setGrade(ok ? 'correct' : 'wrong', q.choices[picked]);
+      reveal.hidden = false;
+      reveal.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
     function check() {
+      if (mode === 'mc') return checkMc();
       const mine = ta.value.trim();
       const auto = judge(mine, q);
       document.getElementById('my-echo').textContent = mine ? `내 답: ${mine}` : '';
@@ -348,6 +431,11 @@
 
     keyNav = (e) => {
       if (e.target.closest('textarea, input') || e.altKey || e.ctrlKey || e.metaKey) return;
+      if (mode === 'mc') {
+        const k = Number(e.key);
+        if (k >= 1 && k <= order.length) { e.preventDefault(); pick(order[k - 1]); return; }
+        if (e.key === 'Enter' && !e.target.closest('button, a')) { e.preventDefault(); check(); return; }
+      }
       if (e.key === 'ArrowLeft' && prev) location.hash = `#/q/${prev.id}${qs}`;
       if (e.key === 'ArrowRight' && next) location.hash = `#/q/${next.id}${qs}`;
     };

@@ -1,0 +1,62 @@
+{
+  "02": [
+    "반정규화",
+    "정규화",
+    "인덱싱",
+    "클러스터링"
+  ],
+  "04": [
+    "① 5 / ② 4",
+    "① 4 / ② 5",
+    "① 6 / ② 4",
+    "① 5 / ② 5"
+  ],
+  "05": [
+    "IPSec (Internet Protocol Security)",
+    "SSL/TLS",
+    "SSH (Secure Shell)",
+    "PPTP (Point-to-Point Tunneling Protocol)"
+  ],
+  "07": [
+    "AES (Advanced Encryption Standard)",
+    "DES (Data Encryption Standard)",
+    "3DES (Triple DES)",
+    "SEED"
+  ],
+  "08": [
+    "① 가상회선 / ② 데이터그램",
+    "① 데이터그램 / ② 가상회선",
+    "① 회선교환 / ② 데이터그램",
+    "① 가상회선 / ② 메시지 교환"
+  ],
+  "09": [
+    "ㅂ. 순차적 (Sequential)",
+    "ㄹ. 절차적 (Procedural)",
+    "ㄷ. 통신적 (Communication)",
+    "ㄱ. 기능적 (Functional)"
+  ],
+  "10": [
+    "Iterator",
+    "Visitor",
+    "Observer",
+    "Composite"
+  ],
+  "11": [
+    "A → D → C → F",
+    "A → D → C → E → F",
+    "A → B → D → C → F",
+    "A → B → D → C → E → F"
+  ],
+  "12": [
+    "6.5",
+    "7.75",
+    "8.75",
+    "5.5"
+  ],
+  "16": [
+    "제어 (Control)",
+    "스탬프 (Stamp)",
+    "공통 (Common)",
+    "내용 (Content)"
+  ]
+}

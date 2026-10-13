@@ -1,0 +1,68 @@
+{
+  "01": [
+    "인덱스 (색인)",
+    "포인터",
+    "버킷",
+    "블록"
+  ],
+  "02": [
+    "ㄷ. Attribute",
+    "ㅁ. Degree",
+    "ㅅ. Tuple",
+    "ㄴ. Domain"
+  ],
+  "03": [
+    "SSH (Secure Shell)",
+    "Telnet",
+    "SSL/TLS",
+    "RDP (Remote Desktop Protocol)"
+  ],
+  "04": [
+    "(1) SJF (Shortest Job First) / (2) SRT (Shortest Remaining Time)",
+    "(1) SRT (Shortest Remaining Time) / (2) SJF (Shortest Job First)",
+    "(1) SJF (Shortest Job First) / (2) RR (Round Robin)",
+    "(1) HRN (Highest Response ratio Next) / (2) SRT (Shortest Remaining Time)"
+  ],
+  "06": [
+    "① 128 / ② 62",
+    "① 128 / ② 64",
+    "① 192 / ② 62",
+    "① 132 / ② 30"
+  ],
+  "07": [
+    "Proxy",
+    "Adapter",
+    "Decorator",
+    "Facade"
+  ],
+  "08": [
+    "AJAX (Asynchronous JavaScript and XML)",
+    "JSON (JavaScript Object Notation)",
+    "REST (Representational State Transfer)",
+    "SOAP (Simple Object Access Protocol)"
+  ],
+  "11": [
+    "1234561, 124567",
+    "1234567, 1234561",
+    "124567, 124561",
+    "1234567"
+  ],
+  "13": [
+    "11.75ms",
+    "8.75ms",
+    "6.5ms",
+    "12.5ms"
+  ],
+  "19": [
+    "SYN Flooding",
+    "Smurf",
+    "Land Attack",
+    "Ping of Death"
+  ],
+  "20": [
+    "1. TTL / 2. 부장 / 3. 대리 / 4. 과장 / 5. 차장",
+    "1. AGE / 2. 55 / 3. 35 / 4. 42 / 5. 45",
+    "1. Index / 2. 1 / 3. 2 / 4. 3 / 5. 4",
+    "1. TTL / 2. 55 / 3. 35 / 4. 42 / 5. 45"
+  ]
+}

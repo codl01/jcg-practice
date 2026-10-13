@@ -1,0 +1,80 @@
+{
+  "02": [
+    "∪, −, ×, π, ⋈",
+    "∪, −, ⋈, π, ×",
+    "∩, −, ×, π, ⋈",
+    "∪, −, ×, σ, ⋈"
+  ],
+  "03": [
+    "1. Bridge / 2. Observer",
+    "1. Decorator / 2. Observer",
+    "1. Bridge / 2. Mediator",
+    "1. Adapter / 2. Observer"
+  ],
+  "05": [
+    "192.168.1.127",
+    "192.168.1.63",
+    "192.168.1.191",
+    "192.168.1.255"
+  ],
+  "06": [
+    "Boundary Value Analysis",
+    "Equivalence Partitioning",
+    "Cause-Effect Graph",
+    "Error Guessing"
+  ],
+  "07": [
+    "(1) 3 / (2) 4",
+    "(1) 4 / (2) 3",
+    "(1) 3 / (2) 5",
+    "(1) 2 / (2) 4"
+  ],
+  "08": [
+    "1. 사회공학 / 2. 다크 데이터",
+    "1. 사회공학 / 2. 메타 데이터",
+    "1. 스피어 피싱 / 2. 다크 데이터",
+    "1. 스니핑 / 2. 다크 데이터"
+  ],
+  "10": [
+    "SIEM (Security Information and Event Management)",
+    "ESM (Enterprise Security Management)",
+    "IDS (Intrusion Detection System)",
+    "IPS (Intrusion Prevention System)"
+  ],
+  "11": [
+    "CVS, SVN, Git",
+    "CVS, SVN, Jenkins",
+    "Git, Maven, SVN",
+    "CVS, Ant, Git"
+  ],
+  "14": [
+    "1. TrustZone / 2. Typosquatting",
+    "1. TrustZone / 2. Pharming",
+    "1. TPM / 2. Typosquatting",
+    "1. Sandbox / 2. Typosquatting"
+  ],
+  "15": [
+    "SSO (Single Sign-On)",
+    "OAuth",
+    "OTP (One Time Password)",
+    "MFA (Multi-Factor Authentication)"
+  ],
+  "16": [
+    "SJF, RR, SRT",
+    "SJF, SRT, RR",
+    "HRN, RR, SRT",
+    "SJF, FCFS, SRT"
+  ],
+  "17": [
+    "1. 관계 / 2. 클래스 / 3. 인터페이스",
+    "1. 관계 / 2. 객체 / 3. 인터페이스",
+    "1. 관계 / 2. 클래스 / 3. 컴포넌트",
+    "1. 속성 / 2. 클래스 / 3. 인터페이스"
+  ],
+  "18": [
+    "1. 실선 / 2. 관계 집합 / 3. 점선 / 4. 관계 집합의 속성 / 5. 개체 집합",
+    "1. 점선 / 2. 관계 집합 / 3. 실선 / 4. 관계 집합의 속성 / 5. 개체 집합",
+    "1. 실선 / 2. 개체 집합 / 3. 점선 / 4. 관계 집합의 속성 / 5. 관계 집합",
+    "1. 실선 / 2. 관계 집합 / 3. 점선 / 4. 개체 집합의 속성 / 5. 개체 집합"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "01": [
+    "세션 하이재킹 (Session Hijacking)",
+    "스니핑 (Sniffing)",
+    "IP 스푸핑 (IP Spoofing)",
+    "SYN 플러딩 (SYN Flooding)"
+  ],
+  "02": [
+    "ㄱ. 도메인 / ㄴ. 개체 / ㄷ. 참조",
+    "ㄱ. 개체 / ㄴ. 도메인 / ㄷ. 참조",
+    "ㄱ. 도메인 / ㄴ. 참조 / ㄷ. 개체",
+    "ㄱ. 참조 / ㄴ. 개체 / ㄷ. 도메인"
+  ],
+  "03": [
+    "CRC (Cyclic Redundancy Check)",
+    "FEC (Forward Error Correction)",
+    "ARQ (Automatic Repeat reQuest)",
+    "LRC (Longitudinal Redundancy Check)"
+  ],
+  "04": [
+    "ㄹ. 스캐어웨어",
+    "ㅇ. 애드웨어",
+    "ㅁ. 안티 스파이웨어",
+    "ㄷ. 셔블웨어"
+  ],
+  "06": [
+    "(1) ARP / (2) RARP",
+    "(1) RARP / (2) ARP",
+    "(1) ARP / (2) DHCP",
+    "(1) DNS / (2) RARP"
+  ],
+  "08": [
+    "(1) ㄷ. degree / (2) ㅁ. cardinality / (3) ㅅ. foreign / (4) ㄱ. domain",
+    "(1) ㅁ. cardinality / (2) ㄷ. degree / (3) ㅅ. foreign / (4) ㄱ. domain",
+    "(1) ㄷ. degree / (2) ㅁ. cardinality / (3) ㄹ. candidate / (4) ㄱ. domain",
+    "(1) ㄷ. degree / (2) ㅁ. cardinality / (3) ㅅ. foreign / (4) ㅂ. attribute"
+  ],
+  "09": [
+    "ㄱ, ㄴ, ㄷ, ㄹ, ㅁ",
+    "ㄷ, ㅁ",
+    "ㄱ, ㄷ, ㅁ",
+    "ㄱ, ㄷ, ㄹ, ㅁ"
+  ],
+  "12": [
+    "(1) ㅁ. 내용 / (2) ㄴ. 스탬프 / (3) ㄹ. 공통",
+    "(1) ㄹ. 공통 / (2) ㄴ. 스탬프 / (3) ㅁ. 내용",
+    "(1) ㅁ. 내용 / (2) ㄱ. 자료 / (3) ㄹ. 공통",
+    "(1) ㅂ. 외부 / (2) ㄴ. 스탬프 / (3) ㄷ. 제어"
+  ],
+  "14": [
+    "Adapter",
+    "Bridge",
+    "Decorator",
+    "Facade"
+  ],
+  "15": [
+    "① int a = 0 / ② a < m || b[a] < x / ③ b[a] < 0 / ④ b[a] = -b[a] / ⑤ a++ / ⑥ return 1 / ⑦ ③ → ④ → ⑤ → ② → ⑥",
+    "① int a = 0 / ② a < m || b[a] < x / ③ b[a] < 0 / ④ b[a] = -b[a] / ⑤ a++ / ⑥ return 1 / ⑦ ③ → ⑤ → ② → ⑥",
+    "① int a = 0 / ② b[a] < 0 / ③ a < m || b[a] < x / ④ b[a] = -b[a] / ⑤ a++ / ⑥ return 1 / ⑦ ③ → ④ → ⑤ → ② → ⑥",
+    "① int a = 0 / ② a < m || b[a] < x / ③ b[a] < 0 / ④ b[a] = -b[a] / ⑤ a++ / ⑥ return 1 / ⑦ ④ → ③ → ⑤ → ② → ⑥"
+  ]
+}

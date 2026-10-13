@@ -1,0 +1,92 @@
+{
+  "01": [
+    "RARP (Reverse Address Resolution Protocol)",
+    "ARP (Address Resolution Protocol)",
+    "ICMP (Internet Control Message Protocol)",
+    "IGMP (Internet Group Management Protocol)"
+  ],
+  "02": [
+    "1. 물리적 설계 / 2. 개념적 설계 / 3. 논리적 설계",
+    "1. 논리적 설계 / 2. 개념적 설계 / 3. 물리적 설계",
+    "1. 물리적 설계 / 2. 논리적 설계 / 3. 개념적 설계",
+    "1. 구현 / 2. 요구사항 분석 / 3. 논리적 설계"
+  ],
+  "03": [
+    "1. 기능적 / 2. 비기능적",
+    "1. 비기능적 / 2. 기능적",
+    "1. 사용자 / 2. 시스템",
+    "1. 기능적 / 2. 성능"
+  ],
+  "04": [
+    "WSDL (Web Services Description Language)",
+    "SOAP (Simple Object Access Protocol)",
+    "UDDI (Universal Description, Discovery and Integration)",
+    "REST (Representational State Transfer)"
+  ],
+  "08": [
+    "반정규화 (비정규화, 역정규화)",
+    "정규화",
+    "인덱싱",
+    "데이터 표준화"
+  ],
+  "09": [
+    "1. 경계값 분석 / 2. 동등 분할",
+    "1. 동등 분할 / 2. 경계값 분석",
+    "1. 경계값 분석 / 2. 원인-결과 그래프",
+    "1. 오류 예측 / 2. 동등 분할"
+  ],
+  "10": [
+    "1. 단위 테스트 / 2. 통합 테스트",
+    "1. 통합 테스트 / 2. 단위 테스트",
+    "1. 단위 테스트 / 2. 시스템 테스트",
+    "1. 알파 테스트 / 2. 통합 테스트"
+  ],
+  "11": [
+    "1. 128 / 2. 8",
+    "1. 64 / 2. 8",
+    "1. 128 / 2. 16",
+    "1. 256 / 2. 8"
+  ],
+  "12": [
+    "IPC (Inter Process Communication)",
+    "RPC (Remote Procedure Call)",
+    "DMA (Direct Memory Access)",
+    "API (Application Programming Interface)"
+  ],
+  "13": [
+    "EAI (Enterprise Application Integration)",
+    "ERP (Enterprise Resource Planning)",
+    "CRM (Customer Relationship Management)",
+    "SOA (Service Oriented Architecture)"
+  ],
+  "14": [
+    "Cardinality : 5 / Degree : 4",
+    "Cardinality : 4 / Degree : 5",
+    "Cardinality : 6 / Degree : 4",
+    "Cardinality : 5 / Degree : 5"
+  ],
+  "16": [
+    "1. 연산 / 2. 구조 / 3. 제약조건",
+    "1. 구조 / 2. 연산 / 3. 제약조건",
+    "1. 연산 / 2. 관계 / 3. 제약조건",
+    "1. 제약조건 / 2. 구조 / 3. 연산"
+  ],
+  "18": [
+    "임의적 접근 통제 (DAC, Discretionary Access Control)",
+    "강제적 접근 통제 (MAC, Mandatory Access Control)",
+    "역할 기반 접근 통제 (RBAC, Role Based Access Control)",
+    "속성 기반 접근 통제 (ABAC, Attribute Based Access Control)"
+  ],
+  "19": [
+    "1. 내용 결합도 / 2. 스탬프 결합도 / 3. 공통 결합도",
+    "1. 공통 결합도 / 2. 스탬프 결합도 / 3. 내용 결합도",
+    "1. 내용 결합도 / 2. 자료 결합도 / 3. 공통 결합도",
+    "1. 외부 결합도 / 2. 스탬프 결합도 / 3. 제어 결합도"
+  ],
+  "20": [
+    "세션 하이재킹 (Session Hijacking)",
+    "스니핑 (Sniffing)",
+    "IP 스푸핑 (IP Spoofing)",
+    "SYN 플러딩 (SYN Flooding)"
+  ]
+}

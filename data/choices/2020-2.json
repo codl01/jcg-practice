@@ -1,0 +1,92 @@
+{
+  "01": [
+    "RTO (Recovery Time Objective, 목표 복구 시간)",
+    "RPO (Recovery Point Objective, 목표 복구 시점)",
+    "MTBF (Mean Time Between Failures, 평균 고장 간격)",
+    "BCP (Business Continuity Plan, 업무 연속성 계획)"
+  ],
+  "03": [
+    "AJAX (Asynchronous JavaScript and XML)",
+    "JSON (JavaScript Object Notation)",
+    "SOAP (Simple Object Access Protocol)",
+    "REST (Representational State Transfer)"
+  ],
+  "04": [
+    "애자일 (Agile) 방법론",
+    "나선형 (Spiral) 모형",
+    "프로토타이핑 (Prototyping) 모형",
+    "구조적 방법론"
+  ],
+  "07": [
+    "트랜잭션 처리 중 오류가 발생했을 때 변경 내용을 취소하고 이전 상태(SAVEPOINT 등)로 되돌리는 명령",
+    "트랜잭션이 성공적으로 끝났을 때 변경 내용을 데이터베이스에 영구적으로 반영하는 명령",
+    "트랜잭션 안에서 나중에 되돌아갈 지점을 표시해 두는 명령",
+    "장애 발생 시 로그를 이용해 완료된 트랜잭션의 변경 내용을 다시 반영하는 작업"
+  ],
+  "08": [
+    "IPSec (Internet Protocol Security)",
+    "SSL/TLS (Secure Sockets Layer / Transport Layer Security)",
+    "SSH (Secure Shell)",
+    "L2TP (Layer 2 Tunneling Protocol)"
+  ],
+  "09": [
+    "정적 분석 도구",
+    "동적 분석 도구",
+    "테스트 실행 도구",
+    "성능 테스트 도구"
+  ],
+  "10": [
+    "Observer Pattern",
+    "Mediator Pattern",
+    "Strategy Pattern",
+    "Command Pattern"
+  ],
+  "11": [
+    "안드로이드 (Android)",
+    "iOS",
+    "윈도우 모바일 (Windows Mobile)",
+    "심비안 (Symbian)"
+  ],
+  "13": [
+    "SOAP (Simple Object Access Protocol)",
+    "WSDL (Web Services Description Language)",
+    "UDDI (Universal Description, Discovery and Integration)",
+    "CORBA (Common Object Request Broker Architecture)"
+  ],
+  "14": [
+    "응용 프로그램의 보안 취약점을 이용해 악의적인 SQL 구문을 삽입·실행시켜 데이터베이스의 정보를 탈취하거나 조작하는 공격",
+    "게시판 등에 악성 스크립트를 삽입하여 다른 사용자의 브라우저에서 실행되게 하는 공격",
+    "사용자가 의도하지 않은 요청을 인증된 상태로 서버에 보내도록 만드는 공격",
+    "할당된 메모리보다 큰 데이터를 입력해 인접 메모리를 덮어쓰고 악성 코드를 실행하는 공격"
+  ],
+  "15": [
+    "chmod 751 a.txt",
+    "chmod 754 a.txt",
+    "chmod 571 a.txt",
+    "chown 751 a.txt"
+  ],
+  "16": [
+    "유효성",
+    "일관성",
+    "가시성",
+    "효율성"
+  ],
+  "17": [
+    "LOD (Linked Open Data)",
+    "Open API",
+    "메타데이터 (Metadata)",
+    "빅데이터 (Big Data)"
+  ],
+  "18": [
+    "1. 개념적 / 2. 논리적 / 3. 물리적 데이터 모델링",
+    "1. 논리적 / 2. 개념적 / 3. 물리적 데이터 모델링",
+    "1. 개념적 / 2. 물리적 / 3. 논리적 데이터 모델링",
+    "1. 물리적 / 2. 논리적 / 3. 개념적 데이터 모델링"
+  ],
+  "20": [
+    "형상 관리",
+    "요구사항 관리",
+    "빌드 자동화",
+    "위험 관리"
+  ]
+}

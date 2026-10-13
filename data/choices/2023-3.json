@@ -1,0 +1,62 @@
+{
+  "02": [
+    "ㅇ. OAuth",
+    "ㄷ. SAML",
+    "ㄴ. JWT",
+    "ㅁ. SSO"
+  ],
+  "03": [
+    "(1) chmod / (2) 751",
+    "(1) chmod / (2) 754",
+    "(1) chown / (2) 751",
+    "(1) chmod / (2) 571"
+  ],
+  "07": [
+    "(1) MAC / (2) RBAC / (3) DAC",
+    "(1) DAC / (2) RBAC / (3) MAC",
+    "(1) MAC / (2) DAC / (3) RBAC",
+    "(1) RBAC / (2) MAC / (3) DAC"
+  ],
+  "09": [
+    "ATM (Asynchronous Transfer Mode)",
+    "X.25",
+    "프레임 릴레이 (Frame Relay)",
+    "ISDN (Integrated Services Digital Network)"
+  ],
+  "12": [
+    "NAT (Network Address Translation)",
+    "DHCP (Dynamic Host Configuration Protocol)",
+    "DNS (Domain Name System)",
+    "ARP (Address Resolution Protocol)"
+  ],
+  "15": [
+    "패키지 다이어그램",
+    "클래스 다이어그램",
+    "컴포넌트 다이어그램",
+    "배치 다이어그램"
+  ],
+  "16": [
+    "ㄱ. Equivalence Partitioning",
+    "ㄷ. Boundary Value Analysis",
+    "ㅁ. Error Guessing",
+    "ㅅ. Cause Effect Graph"
+  ],
+  "17": [
+    "(1) IaaS / (2) PaaS / (3) SaaS",
+    "(1) SaaS / (2) PaaS / (3) IaaS",
+    "(1) PaaS / (2) IaaS / (3) SaaS",
+    "(1) IaaS / (2) SaaS / (3) PaaS"
+  ],
+  "18": [
+    "RIP (Routing Information Protocol)",
+    "OSPF (Open Shortest Path First)",
+    "BGP (Border Gateway Protocol)",
+    "EGP (Exterior Gateway Protocol)"
+  ],
+  "20": [
+    "참조",
+    "개체",
+    "도메인",
+    "사용자 정의"
+  ]
+}

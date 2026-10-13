@@ -1,0 +1,86 @@
+{
+  "02": [
+    "1. Authentication / 2. Authorization / 3. Accounting",
+    "1. Authorization / 2. Authentication / 3. Accounting",
+    "1. Authentication / 2. Authorization / 3. Application",
+    "1. Authentication / 2. Access / 3. Accounting"
+  ],
+  "04": [
+    "ARP",
+    "RARP",
+    "DNS",
+    "ICMP"
+  ],
+  "05": [
+    "Control Coupling",
+    "Stamp Coupling",
+    "Content Coupling",
+    "Common Coupling"
+  ],
+  "06": [
+    "1. 데이터 링크 계층 / 2. 네트워크 계층 / 3. 표현 계층",
+    "1. 물리 계층 / 2. 네트워크 계층 / 3. 표현 계층",
+    "1. 데이터 링크 계층 / 2. 전송 계층 / 3. 표현 계층",
+    "1. 데이터 링크 계층 / 2. 네트워크 계층 / 3. 세션 계층"
+  ],
+  "07": [
+    "1. Aggregation / 2. Generalization",
+    "1. Generalization / 2. Aggregation",
+    "1. Association / 2. Generalization",
+    "1. Aggregation / 2. Dependency"
+  ],
+  "08": [
+    "1. 테스트 조건 / 2. 테스트 데이터 / 3. 예상 결과",
+    "1. 테스트 데이터 / 2. 테스트 조건 / 3. 예상 결과",
+    "1. 테스트 조건 / 2. 테스트 데이터 / 3. 수행 절차",
+    "1. 테스트 환경 / 2. 테스트 데이터 / 3. 예상 결과"
+  ],
+  "09": [
+    "Cause-Effect Graph (원인-결과 그래프)",
+    "Decision Table (결정 테이블)",
+    "Equivalence Partitioning (동등 분할)",
+    "Boundary Value Analysis (경계값 분석)"
+  ],
+  "10": [
+    "DES (Data Encryption Standard)",
+    "AES (Advanced Encryption Standard)",
+    "SEED",
+    "IDEA (International Data Encryption Algorithm)"
+  ],
+  "13": [
+    "4",
+    "3",
+    "5",
+    "2"
+  ],
+  "15": [
+    "클래스 (Class)",
+    "객체 (Object)",
+    "시퀀스 (Sequence)",
+    "컴포넌트 (Component)"
+  ],
+  "16": [
+    "Factory Method",
+    "Abstract Factory",
+    "Builder",
+    "Prototype"
+  ],
+  "18": [
+    "인덱스 (색인)",
+    "포인터",
+    "버킷",
+    "블록"
+  ],
+  "19": [
+    "GUI (Graphical User Interface)",
+    "CLI (Command Line Interface)",
+    "NUI (Natural User Interface)",
+    "OUI (Organic User Interface)"
+  ],
+  "20": [
+    "1. 상향식 / 2. 테스트 드라이버",
+    "1. 하향식 / 2. 테스트 스텁",
+    "1. 상향식 / 2. 테스트 스텁",
+    "1. 하향식 / 2. 테스트 드라이버"
+  ]
+}

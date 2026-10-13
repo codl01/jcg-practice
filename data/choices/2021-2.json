@@ -1,0 +1,74 @@
+{
+  "01": [
+    "애드혹 네트워크 (Ad-hoc Network)",
+    "VPN (Virtual Private Network)",
+    "LAN (Local Area Network)",
+    "SDN (Software Defined Network)"
+  ],
+  "02": [
+    "(1) UX (User Experience) / (2) UI (User Interface)",
+    "(1) UI (User Interface) / (2) UX (User Experience)",
+    "(1) UX (User Experience) / (2) NUI (Natural User Interface)",
+    "(1) CX (Customer Experience) / (2) UI (User Interface)"
+  ],
+  "03": [
+    "트랜잭션의 연산은 데이터베이스에 모두 반영되거나 전혀 반영되지 않아야 한다.",
+    "트랜잭션이 실행을 완료하면 데이터베이스는 언제나 일관된 상태를 유지해야 한다.",
+    "동시에 실행되는 트랜잭션은 다른 트랜잭션의 연산에 끼어들 수 없다.",
+    "성공적으로 완료된 트랜잭션의 결과는 시스템 장애가 나도 영구적으로 반영되어야 한다."
+  ],
+  "04": [
+    "제2정규형 (2NF)",
+    "제1정규형 (1NF)",
+    "제3정규형 (3NF)",
+    "보이스-코드 정규형 (BCNF)"
+  ],
+  "08": [
+    "AES (Advanced Encryption Standard)",
+    "DES (Data Encryption Standard)",
+    "SEED",
+    "RSA (Rivest-Shamir-Adleman)"
+  ],
+  "09": [
+    "1. 문장 / 2. 결정 / 3. 조건",
+    "1. 문장 / 2. 조건 / 3. 결정",
+    "1. 결정 / 2. 문장 / 3. 조건",
+    "1. 문장 / 2. 결정 / 3. 다중 조건"
+  ],
+  "11": [
+    "1. 절차적 응집도 / 2. 교환적 응집도 / 3. 기능적 응집도",
+    "1. 순차적 응집도 / 2. 교환적 응집도 / 3. 기능적 응집도",
+    "1. 절차적 응집도 / 2. 논리적 응집도 / 3. 기능적 응집도",
+    "1. 시간적 응집도 / 2. 교환적 응집도 / 3. 순차적 응집도"
+  ],
+  "12": [
+    "1. 가상 회선 방식 / 2. 데이터그램 방식",
+    "1. 데이터그램 방식 / 2. 가상 회선 방식",
+    "1. 회선 교환 방식 / 2. 데이터그램 방식",
+    "1. 가상 회선 방식 / 2. 메시지 교환 방식"
+  ],
+  "13": [
+    "행위 (Behavioral)",
+    "생성 (Creational)",
+    "구조 (Structural)",
+    "클래스 (Class)"
+  ],
+  "14": [
+    "로킹 (Locking)",
+    "타임스탬프 순서 (Timestamp Ordering)",
+    "낙관적 검증 (Optimistic Validation)",
+    "다중 버전 (Multi-Version)"
+  ],
+  "15": [
+    "1. Function Modeling / 2. Dynamic Modeling / 3. Object Modeling",
+    "1. Object Modeling / 2. Dynamic Modeling / 3. Function Modeling",
+    "1. Function Modeling / 2. Object Modeling / 3. Dynamic Modeling",
+    "1. Dynamic Modeling / 2. Function Modeling / 3. Object Modeling"
+  ],
+  "20": [
+    "스텁 (Stub)",
+    "드라이버 (Driver)",
+    "오라클 (Oracle)",
+    "하네스 (Harness)"
+  ]
+}

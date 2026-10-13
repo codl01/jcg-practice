@@ -1,0 +1,62 @@
+{
+  "04": [
+    "AJAX (Asynchronous JavaScript and XML)",
+    "JSON (JavaScript Object Notation)",
+    "REST (Representational State Transfer)",
+    "WebSocket"
+  ],
+  "05": [
+    "가상회선, 데이터그램",
+    "데이터그램, 가상회선",
+    "회선교환, 데이터그램",
+    "가상회선, 메시지 교환"
+  ],
+  "06": [
+    "L2TP (Layer 2 Tunneling Protocol)",
+    "PPTP (Point-to-Point Tunneling Protocol)",
+    "L2F (Layer 2 Forwarding)",
+    "IPSec (Internet Protocol Security)"
+  ],
+  "07": [
+    "SSH (Secure Shell)",
+    "Telnet",
+    "FTP (File Transfer Protocol)",
+    "SSL (Secure Sockets Layer)"
+  ],
+  "08": [
+    "1. 웜 / 2. 트로이 목마 / 3. 바이러스",
+    "1. 바이러스 / 2. 트로이 목마 / 3. 웜",
+    "1. 웜 / 2. 랜섬웨어 / 3. 바이러스",
+    "1. 웜 / 2. 트로이 목마 / 3. 스파이웨어"
+  ],
+  "10": [
+    "ICMP (Internet Control Message Protocol)",
+    "ARP (Address Resolution Protocol)",
+    "IGMP (Internet Group Management Protocol)",
+    "UDP (User Datagram Protocol)"
+  ],
+  "11": [
+    "Proxy",
+    "Adapter",
+    "Decorator",
+    "Facade"
+  ],
+  "12": [
+    "1. 튜플 / 2. 릴레이션 인스턴스 / 3. 카디널리티",
+    "1. 튜플 / 2. 릴레이션 스키마 / 3. 카디널리티",
+    "1. 속성 / 2. 릴레이션 인스턴스 / 3. 카디널리티",
+    "1. 튜플 / 2. 릴레이션 인스턴스 / 3. 차수 (Degree)"
+  ],
+  "18": [
+    "1. 외부 / 2. 개념 / 3. 내부",
+    "1. 내부 / 2. 개념 / 3. 외부",
+    "1. 개념 / 2. 외부 / 3. 내부",
+    "1. 외부 / 2. 내부 / 3. 개념"
+  ],
+  "19": [
+    "1234561, 124567",
+    "1234567, 1234561",
+    "124567, 124561",
+    "1234567"
+  ]
+}

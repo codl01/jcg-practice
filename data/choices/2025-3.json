@@ -1,0 +1,68 @@
+{
+  "01": [
+    "패키지",
+    "클래스",
+    "컴포넌트",
+    "배치"
+  ],
+  "02": [
+    "ㅇ. 조건 (Condition)",
+    "ㄴ. 결정 (Decision)",
+    "ㄷ. 조건/결정 (Condition/Decision)",
+    "ㄹ. 변경 조건/결정 (MC/DC)"
+  ],
+  "03": [
+    "1. pwd / 2. ls / 3. cd / 4. cp",
+    "1. ls / 2. pwd / 3. cd / 4. cp",
+    "1. pwd / 2. ls / 3. cp / 4. cd",
+    "1. cd / 2. ls / 3. pwd / 4. cp"
+  ],
+  "04": [
+    "① ㉧ Hamming / ② ㉡ FEC / ③ ㉢ BEC / ④ ㉤ Parity / ⑤ ㉠ CRC",
+    "① ㉧ Hamming / ② ㉢ BEC / ③ ㉡ FEC / ④ ㉤ Parity / ⑤ ㉠ CRC",
+    "① ㉧ Hamming / ② ㉡ FEC / ③ ㉣ NAK / ④ ㉤ Parity / ⑤ ㉠ CRC",
+    "① ㉧ Hamming / ② ㉡ FEC / ③ ㉢ BEC / ④ ㉠ CRC / ⑤ ㉥ MD5"
+  ],
+  "10": [
+    "4",
+    "3",
+    "5",
+    "2"
+  ],
+  "11": [
+    "OTP (One Time Password)",
+    "PIN (Personal Identification Number)",
+    "FIDO (Fast IDentity Online)",
+    "CAPTCHA"
+  ],
+  "13": [
+    "OAuth",
+    "SSO (Single Sign-On)",
+    "SAML (Security Assertion Markup Language)",
+    "Kerberos"
+  ],
+  "14": [
+    "A : a1",
+    "A : a1, a2",
+    "A : a2",
+    "B : b2"
+  ],
+  "16": [
+    "ㄱ. 튜플 / ㄴ. 인스턴스 / ㄷ. 카디널리티",
+    "ㄱ. 속성 / ㄴ. 인스턴스 / ㄷ. 카디널리티",
+    "ㄱ. 튜플 / ㄴ. 스키마 / ㄷ. 카디널리티",
+    "ㄱ. 튜플 / ㄴ. 인스턴스 / ㄷ. 차수"
+  ],
+  "18": [
+    "ㄱ. MAC / ㄴ. RBAC / ㄷ. DAC",
+    "ㄱ. DAC / ㄴ. RBAC / ㄷ. MAC",
+    "ㄱ. MAC / ㄴ. DAC / ㄷ. RBAC",
+    "ㄱ. RBAC / ㄴ. MAC / ㄷ. DAC"
+  ],
+  "19": [
+    "ㄱ(테스트 조건) / ㄹ(테스트 데이터) / ㅁ(예상 결과)",
+    "ㄹ(테스트 데이터) / ㄱ(테스트 조건) / ㅁ(예상 결과)",
+    "ㄱ(테스트 조건) / ㄹ(테스트 데이터) / ㅅ(성공/실패 기준)",
+    "ㄴ(테스트 환경) / ㄹ(테스트 데이터) / ㅁ(예상 결과)"
+  ]
+}

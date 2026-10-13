@@ -205,6 +205,18 @@ async function scrapeExam(exam) {
   return { exam: { id: exam.id, year: exam.year, round: exam.round, source: exam.source, questions }, warnings, images: imgMap.size };
 }
 
+// data/choices/<examId>.json: { "07": [correct, wrong, wrong, wrong] } — 4지선다 practice options, correct one first.
+async function applyChoices(exam) {
+  let ch = {};
+  try { ch = JSON.parse(await readFile(new URL(`choices/${exam.id}.json`, DATA), 'utf8')); } catch { return 0; }
+  let n = 0;
+  for (const q of exam.questions) {
+    const c = ch[String(q.no).padStart(2, '0')];
+    if (c) { q.choices = c; n++; }
+  }
+  return n;
+}
+
 let overrides = {};
 try { overrides = JSON.parse(await readFile(new URL('overrides.json', DATA), 'utf8')); } catch { /* no overrides */ }
 
@@ -212,6 +224,9 @@ const out = [];
 for (const e of EXAMS) {
   const { exam, warnings, images } = await scrapeExam(e);
   for (const q of exam.questions) if (overrides[q.id]) Object.assign(q, overrides[q.id]);
+  const theory = exam.questions.filter((q) => q.category === '이론').length;
+  const mc = await applyChoices(exam);
+  if (mc < theory) warnings.push(`choices: ${mc}/${theory} theory`);
   const cats = Object.entries(exam.questions.reduce((m, q) => ((m[q.category] = (m[q.category] || 0) + 1), m), {}))
     .map(([k, v]) => `${k}${v}`).join(' ');
   console.log(`${e.id.padEnd(7)} q=${exam.questions.length} img=${images}  ${cats}${warnings.length ? '\n   ! ' + warnings.join('\n   ! ') : ''}`);

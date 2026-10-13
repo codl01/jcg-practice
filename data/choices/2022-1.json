@@ -1,0 +1,74 @@
+{
+  "01": [
+    "RAID 0",
+    "RAID 1",
+    "RAID 5",
+    "RAID 6"
+  ],
+  "02": [
+    "1. Redo / 2. Undo",
+    "1. Undo / 2. Redo",
+    "1. Commit / 2. Undo",
+    "1. Checkpoint / 2. Undo"
+  ],
+  "05": [
+    "데이터를 삭제할 때 원하지 않는 다른 데이터까지 함께 삭제되는 현상",
+    "데이터를 삽입할 때 원하지 않는 값도 함께 넣어야 하거나 삽입 자체가 불가능한 현상",
+    "중복된 데이터 중 일부만 수정되어 데이터 간에 불일치가 생기는 현상",
+    "조회할 때 불필요한 데이터까지 함께 검색되어 성능이 떨어지는 현상"
+  ],
+  "07": [
+    "1. extend / 2. pop / 3. reverse",
+    "1. append / 2. pop / 3. reverse",
+    "1. extend / 2. remove / 3. reverse",
+    "1. extend / 2. pop / 3. sort"
+  ],
+  "08": [
+    "TKIP (Temporal Key Integrity Protocol)",
+    "WEP (Wired Equivalent Privacy)",
+    "CCMP (Counter Mode CBC-MAC Protocol)",
+    "EAP (Extensible Authentication Protocol)"
+  ],
+  "09": [
+    "NUI (Natural User Interface)",
+    "GUI (Graphical User Interface)",
+    "CLI (Command Line Interface)",
+    "OUI (Organic User Interface)"
+  ],
+  "10": [
+    "1. static / 2. dynamic",
+    "1. dynamic / 2. static",
+    "1. running / 2. dynamic",
+    "1. static / 2. running"
+  ],
+  "13": [
+    "ㄷ, ㄹ, ㅂ (Boundary Value Analysis, Equivalence Partitioning, Cause-Effect Graph)",
+    "ㄱ, ㄷ, ㄹ (Cause-Decision Graph, Boundary Value Analysis, Equivalence Partitioning)",
+    "ㄴ, ㅁ, ㅇ (Decision Coverage, Statement Coverage, Base Path Coverage)",
+    "ㄷ, ㄹ, ㅈ (Boundary Value Analysis, Equivalence Partitioning, Boundary Division Analysis)"
+  ],
+  "16": [
+    "ISMS (Information Security Management System)",
+    "PIMS (Personal Information Management System)",
+    "ESM (Enterprise Security Management)",
+    "SIEM (Security Information and Event Management)"
+  ],
+  "17": [
+    "1. 유일성 / 2. 최소성",
+    "1. 최소성 / 2. 유일성",
+    "1. 유일성 / 2. 무결성",
+    "1. 참조성 / 2. 최소성"
+  ],
+  "18": [
+    "Watering Hole",
+    "Pharming",
+    "Ransomware",
+    "Spear Phishing"
+  ],
+  "20": [
+    "1. 단위 / 2. 통합 / 3. 시스템 / 4. 인수 테스트",
+    "1. 단위 / 2. 시스템 / 3. 통합 / 4. 인수 테스트",
+    "1. 통합 / 2. 단위 / 3. 시스템 / 4. 인수 테스트",
+    "1. 단위 / 2. 통합 / 3. 인수 / 4. 시스템 테스트"
+  ]
+}
