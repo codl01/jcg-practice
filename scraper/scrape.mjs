@@ -15,7 +15,7 @@ const DROP = 'script, style, ins, iframe, noscript, .revenue_unit_wrap, .btn-tog
 const BLOCKS = new Set(['p', 'table', 'ul', 'ol', 'pre', 'h4', 'blockquote', 'hr', 'figure', 'div']);
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-const clean = (s) => s.replace(/ /g, ' ').replace(/[ \t]+/g, ' ').trim();
+const clean = (s) => s.replace(/\u00a0/g, ' ').replace(/[ \t]+/g, ' ').trim();
 
 // Tistory pages pad everything with <p>&nbsp;</p>; a block is "empty" if it has no text and no media.
 function isEmpty($, el) {
@@ -26,7 +26,7 @@ function isEmpty($, el) {
 }
 
 function codeBlock(text) {
-  const lines = text.replace(/ /g, ' ').replace(/\r/g, '').split('\n');
+  const lines = text.replace(/\u00a0/g, ' ').replace(/\r/g, '').split('\n');
   while (lines.length && !lines[0].trim()) lines.shift();
   while (lines.length && !lines.at(-1).trim()) lines.pop();
   // Strip the common leading indentation (several posts prefix every line with a space).
@@ -52,7 +52,7 @@ class Ctx {
 }
 
 function render($, node, ctx) {
-  if (node.type === 'text') return esc(node.data.replace(/ /g, ' '));
+  if (node.type === 'text') return esc(node.data.replace(/\u00a0/g, ' '));
   if (node.type !== 'tag') return '';
   const $n = $(node);
   if ($n.is(DROP)) return '';
@@ -143,7 +143,7 @@ async function downloadImages(exam, images) {
   for (const img of images) {
     const base = `${img.local}`;
     for (const ext of ['png', 'jpg', 'gif', 'webp']) {
-      try { await access(new URL(`${base}.${ext}`, dir)); map.set(img.local, `assets/img/${exam.id}/${base}.${ext}`); } catch {}
+      try { await access(new URL(`${base}.${ext}`, dir)); map.set(img.local, `assets/img/${exam.id}/${base}.${ext}`); } catch { /* try next ext */ }
     }
     if (map.has(img.local)) continue;
     const res = await fetch(img.src, { headers: { 'User-Agent': UA, Referer: exam.source } });
@@ -206,7 +206,7 @@ async function scrapeExam(exam) {
 }
 
 let overrides = {};
-try { overrides = JSON.parse(await readFile(new URL('overrides.json', DATA), 'utf8')); } catch {}
+try { overrides = JSON.parse(await readFile(new URL('overrides.json', DATA), 'utf8')); } catch { /* no overrides */ }
 
 const out = [];
 for (const e of EXAMS) {

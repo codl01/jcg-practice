@@ -9,7 +9,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 for (const e of EXAMS) {
   const file = new URL(`${e.post}.html`, CACHE);
-  try { await access(file); continue; } catch {}
+  try { await access(file); continue; } catch { /* not cached */ }
   const res = await fetch(`https://chobopark.tistory.com/${e.post}`, { headers: { 'User-Agent': UA } });
   if (!res.ok) { console.error(`${e.id}: HTTP ${res.status}`); continue; }
   await writeFile(file, await res.text());

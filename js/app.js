@@ -108,8 +108,8 @@
   const norm = (s) => s.normalize('NFKC').toLowerCase().replace(/[\s'"`‘’“”.,·:;~\-_]/g, '');
   const stripEnum = (line) => line.replace(/^\s*(\(?\d+\)|\d+\s*[.번]|[①-⑳]|[ㄱ-ㅎ]\s*[.)])\s*/, '');
   const noParens = (line) => line.replace(/\([^)]*\)/g, '');
-  const onlyParens = (line) => (line.match(/\(([^)]*)\)/) || [, ''])[1];
-  const symbolOf = (line) => (line.match(/^\s*([ㄱ-ㅎ]|[①-⑳])\s*[.)]?/) || [, ''])[1];
+  const onlyParens = (line) => (line.match(/\(([^)]*)\)/) || [null, ''])[1];
+  const symbolOf = (line) => (line.match(/^\s*([ㄱ-ㅎ]|[①-⑳])\s*[.)]?/) || [null, ''])[1];
 
   function variants(text) {
     const lines = text.split('\n').map((l) => l.trim()).filter(Boolean);
